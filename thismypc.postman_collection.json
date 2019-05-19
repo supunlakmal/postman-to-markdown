@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "151bd0f1-e1b3-408b-ad27-386def44dcd1",
+		"name": "thisMyPC p-md",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login From Web",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\":\"user@gamil.com\",\n\"password\":\"^%$fghkjh6\"\n}"
+				},
+				"url": {
+					"raw": "http://thismypc.com:5000/login",
+					"protocol": "http",
+					"host": [
+						"thismypc",
+						"com"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Loging  for   web site"
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\":\"admin@admin.com\",\n\"password\":\"123\"\n}"
+						},
+						"url": {
+							"raw": "http://thismypc.com:5000/login",
+							"protocol": "http",
+							"host": [
+								"thismypc",
+								"com"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept ,token ,uid"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "153"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"99-3/jv6KIDQEgN85kEokMhpQqnlEg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 May 2019 11:59:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Hello!\",\n    \"data\": {\n        \"name\": \"Supun\",\n        \"auth\": \"bfc6f0295bbab0c80b3d3cfb55dfe5\",\n        \"id\": \"5c3d6a25221d01eba0afc9\",\n        \"ioSocketID\": \"room1\"\n    }\n}"
+				},
+				{
+					"name": "401 Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\":\"admin@admin.com\",\n\"password\":\"1c23\"\n}"
+						},
+						"url": {
+							"raw": "http://thismypc.com:5000/login",
+							"protocol": "http",
+							"host": [
+								"thismypc",
+								"com"
+							],
+							"port": "5000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept ,token ,uid"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-bxfaoRl9Udqv8BbqOTYmyw+lw+M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 May 2019 11:59:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Invalid User\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "User  Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\":\"demouser@gmail.com\",\n\"password\":\"^ghfhfg\",\n\"name\":\"Demo User\"\n}"
+				},
+				"url": {
+					"raw": "http://thismypc.com:5000/register",
+					"protocol": "http",
+					"host": [
+						"thismypc",
+						"com"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					]
+				},
+				"description": "Create an Account for the authenticated User if an Account for that User does not already exist. Each User can only have one Account."
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\":\"demo@thismypc.com\",\n\"password\":\"demo\",\n\"name\":\"Demo User\"\n}"
+						},
+						"url": {
+							"raw": "http://thismypc.com:5000/register",
+							"protocol": "http",
+							"host": [
+								"thismypc",
+								"com"
+							],
+							"port": "5000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept ,token ,uid"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-N24AvK2sra8INbUVbUnxDxugXCU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 May 2019 12:00:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Hello!\",\n    \"data\": {\n        \"name\": \"Demo User\",\n        \"auth\": \"29ffe009f1b36a6aebf89138647449\",\n        \"id\": \"5cdff3de3435a35b7e5e7e0\",\n        \"ioSocketID\": \"room1\"\n    }\n}"
+				},
+				{
+					"name": " 401 Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\":\"demoghtht@thismypc.com\",\n\"password\":\"\",\n\"name\":\"Demo User\"\n}"
+						},
+						"url": {
+							"raw": "http://thismypc.com:5000/register",
+							"protocol": "http",
+							"host": [
+								"thismypc",
+								"com"
+							],
+							"port": "5000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept ,token ,uid"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "59"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b-RhD21TVFS7wuojF27DLRPFsIwwE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 May 2019 01:18:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"User  Already exit\",\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}
