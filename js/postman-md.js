@@ -1,8 +1,19 @@
 'use strict';
+/**
+ * PostMan to  markdown class
+ */
 class PostmanMD {
+  /**
+   *
+   * @param {object} e
+   */
   constructor(e) {
     this.respond = e.withRespond;
   }
+  /**
+   * @param {object} data  json  responses
+   * @return {object} html data
+   */
   responsesData(data) {
     const responses = `<br> ## ${data.name}
                       <br>
@@ -16,10 +27,16 @@ class PostmanMD {
                       <br>`;
     return responses;
   }
+
+  /**
+   *
+   * @param {object} val
+   * @return {object} html data
+   */
   mdOutput(val) {
     const self = this;
     let header = '';
-    jQuery.each(val.request.header, function(i, sub) {
+    jQuery.each(val.request.header, function (i, sub) {
       header += `"${sub.key}" : "${sub.value}"<br>`;
     });
 
@@ -28,7 +45,7 @@ class PostmanMD {
 
 
     if (self.respond) {
-      jQuery.each(val.response, function(i, sub) {
+      jQuery.each(val.response, function (i, sub) {
         responses += self.responsesData(sub);
         console.log(sub);
       });
@@ -59,10 +76,14 @@ class PostmanMD {
                 `;
     return md;
   }
+  /**
+   *
+   * @param {object} data
+   */
   getJsonData(data) {
     const self = this;
 
-    jQuery.each(data.item, function(i, val) {
+    jQuery.each(data.item, function (i, val) {
       // console.log(i,val);
       if (val.request) {
         console.log(i, val.name, val);
@@ -72,12 +93,16 @@ class PostmanMD {
       }
     });
   }
+  /**
+   *
+   * @param {object} file
+   */
   readJsonFile(file) {
     const self = this;
     const rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType('application/json');
     rawFile.open('GET', file, true);
-    rawFile.onreadystatechange = function() {
+    rawFile.onreadystatechange = function () {
       if (rawFile.readyState === 4 && rawFile.status == '200') {
         // callback(rawFile.responseText);
         const data = JSON.parse(rawFile.responseText);
